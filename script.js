@@ -1,15 +1,16 @@
 window.onload = function () {
   var seconds = 00;
   var tens = 00;
+  var flagtext = document.getElementById("flag-text");
   var OutputSeconds = document.getElementById("second");
   var OutputTens = document.getElementById("tens");
   var buttonStart = document.getElementById("btn-start");
   var buttonStop = document.getElementById("btn-stop");
   var buttonReset = document.getElementById("btn-reset");
   var buttonFlag = document.getElementById("btn-flag");
+  var count = 1;
   var Interval;
 
-  buttonFlag.addEventListener("click", () => {});
   buttonStart.addEventListener("click", () => {
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10); // millisecond 10 = 0.01 second
@@ -25,6 +26,15 @@ window.onload = function () {
     seconds = "00";
     OutputSeconds.innerHTML = seconds;
     OutputTens.innerHTML = tens;
+  });
+
+  buttonFlag.addEventListener("click", () => {
+    const flag = document.createElement("div");
+    flag.innerHTML = `<p> ${count++}. &ensp; ${OutputSeconds.innerText} : ${
+      OutputTens.innerText
+    } </p>`;
+    store = flag;
+    flagtext.append(flag);
   });
 
   function startTimer() {

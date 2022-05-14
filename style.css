@@ -1,3 +1,4 @@
+/* css for body  */
 body {
   margin: 0%;
   padding: 0%;
@@ -12,22 +13,26 @@ body {
   min-height: 100vh;
 }
 
+/* css for container */
 .container {
   margin: 100px auto;
   text-align: center;
 }
 
+/* css for heading tag i.e StopWatch */
 h1 {
   font-size: 4em;
   font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+/* css for Paragraph tag i.e for sec and tens */
+p {
+  font-size: 5em;
   color: #65c7f7;
 }
 
-p {
-  font-size: 5em;
-  color: #fff;
-}
-
+/* css for buttons */
 button {
   border: none;
   padding: 18px 10px;
@@ -36,11 +41,13 @@ button {
   border-radius: 50%;
 }
 
+/* css for button image */
 #img-btn {
   height: 4rem;
   border-radius: 50%;
 }
 
+/* css for hovering button */
 button:hover {
   background-color: #65c7f7;
   cursor: pointer;
