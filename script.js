@@ -30,7 +30,7 @@ window.onload = function () {
 
   buttonFlag.addEventListener("click", () => {
     const flag = document.createElement("div");
-    flag.innerHTML = `<p> ${count++}. &ensp; ${OutputSeconds.innerText} : ${
+    flag.innerHTML = `<p id="flag"> ${count++}. &ensp; ${OutputSeconds.innerText} : ${
       OutputTens.innerText
     } </p>`;
     store = flag;

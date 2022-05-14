@@ -31,7 +31,10 @@ p {
   font-size: 5em;
   color: #65c7f7;
 }
-
+#flag{
+    font-size: 5em;
+    color: rgb(203, 24, 164);
+}
 /* css for buttons */
 button {
   border: none;
