@@ -28,14 +28,29 @@ window.onload = function () {
     OutputTens.innerHTML = tens;
   });
 
+  var optsec = 00;
+  var opttens = OutputTens.innerText;
   buttonFlag.addEventListener("click", () => {
     const flag = document.createElement("div");
+    
     flag.innerHTML = `<p id="flag"> ${count++}. &ensp; ${OutputSeconds.innerText} : ${
-      OutputTens.innerText
-    } </p>`;
-    store = flag;
+   OutputTens.innerText} &ensp; ${OutputSeconds.innerText-optsec} : ${
+    OutputTens.innerText-opttens} ${flagvalue.innerText}</p> `;
+    opttens = OutputTens.innerText;
+    optsec = OutputSeconds.innerText;
     flagtext.append(flag);
   });
+
+
+  const flagvalue = ()=>{
+    if(opttens > OutputTens.innerText){
+        optsec-1;
+        opttens +100;
+        return opttens - OutputTens.innerText
+
+    }
+    return opttens - OutputTens.innerText
+  }
 
   function startTimer() {
     tens++;

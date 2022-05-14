@@ -34,6 +34,10 @@ p {
 #flag{
     font-size: 5em;
     color: rgb(203, 24, 164);
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    justify-content: space-between;
 }
 /* css for buttons */
 button {
