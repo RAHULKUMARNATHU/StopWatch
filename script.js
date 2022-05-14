@@ -28,29 +28,36 @@ window.onload = function () {
     OutputTens.innerHTML = tens;
   });
 
-  var optsec = 00;
+  var optsec = OutputSeconds.innerText;
   var opttens = OutputTens.innerText;
+
   buttonFlag.addEventListener("click", () => {
     const flag = document.createElement("div");
-    
-    flag.innerHTML = `<p id="flag"> ${count++}. &ensp; ${OutputSeconds.innerText} : ${
-   OutputTens.innerText} &ensp; ${OutputSeconds.innerText-optsec} : ${
-    OutputTens.innerText-opttens} ${flagvalue.innerText}</p> `;
+    const [secvalue, tensvalue] = flagvalue();
+    flag.innerHTML = `<p id="flag"> ${count++}. &ensp; ${
+      OutputSeconds.innerText
+    } : ${OutputTens.innerText} &ensp; ${secvalue} : ${tensvalue} </p> `;
     opttens = OutputTens.innerText;
     optsec = OutputSeconds.innerText;
     flagtext.append(flag);
   });
 
+  const flagvalue = () => {
+    let currOpttens = OutputTens.innerText;
+    let currOptSec = OutputSeconds.innerText;
+    let resulttens, resultsec;
+    if (opttens > OutputTens.innerText) {
+      currOptSec = currOptSec - 1;
+      currOpttens = Number(currOpttens) + 100;
+      resulttens = currOpttens - opttens;
+      resultsec = currOptSec - optsec;
 
-  const flagvalue = ()=>{
-    if(opttens > OutputTens.innerText){
-        optsec-1;
-        opttens +100;
-        return opttens - OutputTens.innerText
-
+      return [resultsec, resulttens];
     }
-    return opttens - OutputTens.innerText
-  }
+    resulttens = currOpttens - opttens;
+    resultsec = currOptSec - optsec;
+    return [resultsec, resulttens];
+  };
 
   function startTimer() {
     tens++;
