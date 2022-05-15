@@ -26,6 +26,11 @@ window.onload = function () {
     seconds = "00";
     OutputSeconds.innerHTML = seconds;
     OutputTens.innerHTML = tens;
+    currOpttens="00";
+    currOptSec="00";
+    opttens = "00";
+    optsec = "00";
+
   });
 
   var optsec = OutputSeconds.innerText;
@@ -40,6 +45,7 @@ window.onload = function () {
     opttens = OutputTens.innerText;
     optsec = OutputSeconds.innerText;
     flagtext.append(flag);
+
   });
 
   const flagvalue = () => {
