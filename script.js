@@ -11,6 +11,7 @@ window.onload = function () {
   var count = 1;
   var Interval;
 
+  // eventListener for start button 
   buttonStart.addEventListener("click", () => {
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10); // millisecond 10 = 0.01 second
